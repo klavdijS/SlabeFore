@@ -1,0 +1,30 @@
+body {
+ background-color: #ebebeb;
+}
+
+.container {
+
+    width: 50%;
+    background-color: #cbe2ee;
+
+}
+
+.content {
+    height: 100vh;
+    margin:20px;
+}
+.page-header {
+    text-align: center;
+}
+
+.post {
+    height: 150px;
+    width: 100%;
+
+    background-color: #ebebeb;
+
+}
+
+#test {
+
+}
