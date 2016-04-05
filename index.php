@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,10 +32,33 @@
 
     <div class="content">
         <div class="post">
+            <div class="text">
+                <p class="lead" id="test" >Tvoja mt je res debela - puška 2016
+                /r Testsdan sjkdahkjs ahkjasdhk jsahdkjh</p>
+             </div>   
+            <div class="rating">
+                <div class="btn">
+                    <a class="button">
+                        <i class="material-icons">remove</i>
+                    </a>
+                     <div class="spaceBtn"></div>
+                     <a class="button">
+                        <i class="material-icons">add</i>
+                    </a>
+                </div>
+                <div class="score">
+                    <p class="lead" id="test" >-120</p>
+                </div>
+             </div> 
+            </div>
+
+
+        <div class="space"></div>
+
+        <div class="post">
             <p class="lead" id="test">Tvoja mt je res debela - puška 2016</p>
-
         </div>
-
+        </div>
     </div>
 
 </div><!-- /.container -->
