@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Arvo:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,16 +27,23 @@
 <div class="container">
 
     <div class="page-header">
-        <h1>Bootstrap Navbar</h1>
-        <p class="lead">Nav bar boys</p>
+        <h1 id="title">SlabeFore.Si</h1>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Slabe fore</a></li>
+                    <li><a href="#">Nove fore</a></li>
+                    <li><a href="#">Objavi</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
     </div>
 
     <div class="content">
         <div class="post">
             <div class="text">
-                <p class="lead" id="test" >Tvoja mt je res debela - puška 2016
-                /r Testsdan sjkdahkjs ahkjasdhk jsahdkjh</p>
-             </div>   
+                <p id="test1">Lorem ipsum dolor sit amet, </p>
+            </div>   
             <div class="rating">
                 <div class="btn">
                     <a class="button">
@@ -47,12 +55,66 @@
                     </a>
                 </div>
                 <div class="score">
-                    <p class="lead" id="test" >-120</p>
+                    <p  >-120</p>
                 </div>
-             </div> 
             </div>
+            <div class="avtor">
+                <p >-Klemen, 12.4.2016</p>
 
+            </div>
+        </div>
 
+        <div class="space"></div>
+
+        <div class="post">
+            <div class="text">
+                <p id="test2" >Lorem ipsum dolor sit amet, Lorem ipsum dolor sit </p>
+            </div>   
+            <div class="rating">
+                <div class="btn">
+                    <a class="button">
+                        <i class="material-icons">remove</i>
+                    </a>
+                     <div class="spaceBtn"></div>
+                     <a class="button">
+                        <i class="material-icons">add</i>
+                    </a>
+                </div>
+                <div class="score">
+                    <p >-120</p>
+                </div>
+            </div>
+            <div class="avtor">
+                <p >-Klemen, 12.4.2016</p>
+
+            </div>
+        </div>
+
+        <div class="space"></div>
+
+        <div class="post">
+            <div class="text">
+                <p id="test3" >Lorem ipsum dolor sit amet, Lorrem ipsum dolor sem ipsum dolor sit ametrem ipsum dolor s,</p>
+            </div>   
+            <div class="rating">
+                <div class="btn">
+                    <a class="button">
+                        <i class="material-icons">remove</i>
+                    </a>
+                     <div class="spaceBtn"></div>
+                     <a class="button">
+                        <i class="material-icons">add</i>
+                    </a>
+                </div>
+                <div class="score">
+                    <p >-120</p>
+                </div>
+            </div>
+            <div class="avtor">
+                <p >-Klemen, 12.4.2016</p>
+
+            </div>
+        </div>
         <div class="space"></div>
 
         <div class="post">
@@ -68,5 +130,6 @@
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+<script src="resize.js"></script>
 </body>
 </html>

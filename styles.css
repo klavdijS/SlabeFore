@@ -1,11 +1,15 @@
 body {
- background-color: #ebebeb;
+background:
+linear-gradient(135deg, #ebebeb 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+linear-gradient(225deg, #ebebeb 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+background-color:#ebebeb;
+background-size: 64px 128px
 }
 
 .container {
 
     width: 50%;
-    background-color: #cbe2ee;
+    background-color: #ebebeb;
 
 }
 
@@ -23,7 +27,12 @@ body {
     	margin:10px;
     }
 
+    #title {
+    	font-size: 40pt;
+    }
 }
+
+
 
 .page-header {
     text-align: center;
@@ -32,20 +41,25 @@ body {
 .post {
     height: 150px;
     width: 100%;
-
-    background-color: #ebebeb;
-
+    border: solid 1px;
+    border-color: #4192D9;
+background-color: #fff; 
+background-image: 
+linear-gradient(#eee .1em, transparent .1em);
+background-size: 100% 1.2em;
 }
 
 .text{
 	padding: 15px;
-	width: 60%;
+	width: 65%;
 	float: left;
+	font-family: 'Arvo', serif;
+	font-style: italic;
 }
 
 .rating{
 	float:right;
-   	width: 30%;
+   	width: 25%;
    	margin:8px;
 }
 
@@ -53,13 +67,27 @@ body {
 	float:left;
    	width: 30%;
    	text-align: center;
-   	margin-top: 55px;
+   	margin-top: 50px;
+	font-size: 25px;
+	position: relative;
+	left: -20px;
 }
 
 .btn{
 	float:right;
    	width: 60%;
 }
+
+.avtor{
+	padding: 0 20px;
+    padding-top: 120px;
+    padding-bottom: 8px;
+    font-family: 'Arvo', serif;
+	font-style: italic;
+
+
+}
+
 
 .space {
 	height: 30px;
@@ -74,7 +102,7 @@ body {
 }
 
 .button {
-    background-color: #cbe2ee; 
+    background-color: #4192D9; 
     border: none;
     color: white;
     padding: 1px 15px ;
@@ -83,4 +111,40 @@ body {
     display: inline-block;
     font-size: 36px;
     border-radius: 8px;
+}
+
+
+.button:active {
+    border: 2px solid green;
+}
+
+@media screen and (max-width: 600px) {
+	.button{
+		font-size: 29px;
+    	padding: 1px 8px ;
+    	margin-top: 5px;
+
+	}
+}
+
+.navbar .navbar-nav {
+     display: inline-block;
+     float: none;
+     vertical-align: top;
+ }
+.navbar-collapse {
+    background-color: #ebebeb;
+}
+.nav {
+	font-size: 30px;
+    background-color: #ebebeb;
+}
+li { margin: 0 20px; display: inline;
+    font-family: 'Arvo', serif;
+}
+ul { list-style: none outside none; margin:0; padding: 0; text-align: center; }
+h1 {
+    font-family: 'Arvo', serif;
+    font-weight: bold;
+    font-size: 72pt;
 }
