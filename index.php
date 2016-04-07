@@ -42,7 +42,7 @@
     <div class="content">
         <div class="post">
             <div class="text">
-                <p id="test1">Lorem ipsum dolor sit amet, </p>
+                <p id="test12">Lorem ipsum dolor sit amet, </p>
             </div>   
             <div class="rating">
                 <div class="btn">
@@ -68,7 +68,7 @@
 
         <div class="post">
             <div class="text">
-                <p id="test2" >Lorem ipsum dolor sit amet, Lorem ipsum dolor sit </p>
+                <p id="test22" >Lorem ipsum dolor sit amet, Lorem ipsum dolor sit </p>
             </div>   
             <div class="rating">
                 <div class="btn">
@@ -94,7 +94,7 @@
 
         <div class="post">
             <div class="text">
-                <p id="test3" >Lorem ipsum dolor sit amet, Lorrem ipsum dolor sem ipsum dolor sit ametrem ipsum dolor s,</p>
+                <p id="test32" >Lorem ipsum dolor sit amet, Lorrem ipsum dolor sem ipsum dolor sit ametrem ipsum dolor s,</p>
             </div>   
             <div class="rating">
                 <div class="btn">
@@ -126,9 +126,7 @@
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-<script src="resize.js"></script>
 <script src="script.js"></script>
 <script src="rate.js"></script>
-<script src="infiniteScroll.js"></script>
 </body>
 </html>
