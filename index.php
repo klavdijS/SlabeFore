@@ -116,10 +116,6 @@
             </div>
         </div>
         <div class="space"></div>
-
-        <div class="post">
-            <p class="lead" id="test">Tvoja mt je res debela - puška 2016</p>
-        </div>
         </div>
     </div>
 
