@@ -46,15 +46,15 @@
             </div>   
             <div class="rating">
                 <div class="btn">
-                    <a class="button">
+                    <a class="button" id= "minus">
                         <i class="material-icons">remove</i>
                     </a>
                      <div class="spaceBtn"></div>
-                     <a class="button">
+                     <a class="button" id="plus">
                         <i class="material-icons">add</i>
                     </a>
                 </div>
-                <div class="score">
+                <div class="score" id= "1fora">
                     <p  >-120</p>
                 </div>
             </div>
@@ -131,5 +131,8 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 <script src="resize.js"></script>
+<script src="rate.js"></script>
+<script src="infiniteScroll.js"></script>
+
 </body>
 </html>
