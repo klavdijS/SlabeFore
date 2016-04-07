@@ -5,7 +5,6 @@ $(document).ready(function() {
 
 	for (var i= 1;i<=3;i++){
 		var length = $("#test"+i).text().length;
-		console.log(length)
 
 		if (length < 30 ) {
 			$("#test"+i).css("font-size", "18pt");

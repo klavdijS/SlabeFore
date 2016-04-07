@@ -50,7 +50,7 @@
                         <i class="material-icons">remove</i>
                     </a>
                      <div class="spaceBtn"></div>
-                     <a class="button">
+                     <a class="button" id="plus">
                         <i class="material-icons">add</i>
                     </a>
                 </div>
@@ -131,5 +131,6 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 <script src="resize.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
