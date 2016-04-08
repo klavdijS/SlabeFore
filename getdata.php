@@ -1,13 +1,6 @@
 <?php
 
-$server = "localhost";
-$username = "root";
-$password = "root";
-$db = "slabefore";
-
-$link = mysqli_connect($server,$username,$password,$db);
-
-mysqli_set_charset($link,"utf8");
+require 'config.php';
 
 
 $query = "SELECT * FROM postslabefore";
@@ -26,16 +19,10 @@ $json = array();
 
 if ($result ->num_rows > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
-        /*$row_array['id'] = $row['id'];
-        $row_array['besedilo'] = $row['besedilo'];
-        $row_array['rating'] = $row['rating'];
-        $row_array['avtor'] = $row ['avtor'];
-        $row_array['datum'] = $row['datum'];
-        $row_array['sort'] = $row['sort'];*/
         $encode [] = $row;
     }
 }
-//$json = json_encode($encode);
+
 echo json_encode($encode);
 
 

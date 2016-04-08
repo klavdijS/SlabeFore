@@ -51,8 +51,32 @@ function resizeFont(index) {
 
     return string;
 }
+/*
+function vote(id,value) { // function vote with 2 arguments: article ID and value (+1 or -1) depending if you clicked on the arrow up or down
+    var dataFields = {'id': id, 'value': value}; // We pass the 2 arguments
+    $.ajax({ // Ajax
+        type: "POST",
+        url: "tuto-voting-system.php",
+        data: dataFields,
+        timeout: 3000,
+  
+        success: function(dataBack){
+            //$('#score' + id).html(dataBack); // div "number" with the new number
+            //$('#arrow_up' + id).html('<div class="arrow_up_voted"></div>'); // We replace the clickable "arrow up" by the not clickable one
+            //$('#arrow_down' + id).html('<div class="arrow_down_voted"></div>'); // We replace the clickable "arrow down" by the not clickable one
+            //$('#message' + id).html('<div id="alertFadeOut' + id + '" style="color: green">Thank you for voting</div>'); // Diplay message with a fadeout
+            //$('#alertFadeOut' + id).fadeOut(1000, function () {
+            //    $('#alertFadeOut' + id).text('');
+            //});
+            },
+        error: function() {
+            $('#score' + id).text('Problem!');
+        }
+        
+    });
+}
 
-
+*/
 $(document).ready(function() {
 
         var numItems = $(".post").length;
@@ -71,22 +95,23 @@ $(document).ready(function() {
                         console.log(data[i].besedilo.length);
                         var fontSize = resizeFont(data[i].besedilo.length);
                         console.log(fontSize);
-
+                        var $a = data[i].id;
                     $(".content").append("<div class='post'>" +
                         "<div class='text'>"+
                             "<p id='test" + data[i].id+"'>" +data[i].besedilo+"</p>"+
                         "</div>"+
                         "<div class='rating'>"+
                             "<div class='btn'>"+
-                            "<a class='button'>"+
+                            "<a class='button' id='minus" + data[i].id+"' name='minus' onclick='voting("+data[i].id+",-1)'>" +
                             "<i class='material-icons'>remove</i>"+
                             "</a>" +
                             "<div class='spaceBtn'></div>"+
-                            "<a class='button'>"+
+                            //onclick="vote(<?php echo $article['id']; ?>, '+1'); return false;"
+                            "<a class='button' id='plus" + data[i].id+"' onclick='voting("+data[i].id+",1)'>"+
                             "<i class='material-icons'>add</i>"+
                             "</a>"+
                             "</div>"+
-                            "<div class='score'>"+
+                            "<div class='score' id='score"+data[i].id+"'>"+
                             "<p>"+data[i].rating+"</p>"+
                             "</div>"+
                             "</div>"+
@@ -102,4 +127,34 @@ $(document).ready(function() {
             }
         });
 
+        //upvote-downvote
+
 });
+
+            function voting(id,value){
+
+            var formData = {id:id, value:value};
+            $.ajax(
+            {
+                url : "vote.php",
+                type: "POST",
+                data : formData,
+            }).done(function(data, textStatus, jqXHR) 
+            {
+                //data: Data from Server
+
+            }).fail(function(jqXHR, textStatus, errorThrown) 
+            {
+            });
+            var el = $("#score"+id);
+            var num = parseInt(el.text());
+            if(value==1){
+                el.text(num+1);
+            }
+            else{
+                el.text(num-1);
+            }
+            }
+
+
+
