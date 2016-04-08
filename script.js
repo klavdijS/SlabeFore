@@ -94,6 +94,7 @@ $(document).ready(function() {
                     for (var i = 0; i < data.length; i++){
                         $cookie_name = 'tcVotingSystem'+data[i].id;
                         console.log(data[i].besedilo.length);
+
                         var fontSize = resizeFont(data[i].besedilo.length);
                         console.log(fontSize);
                         var $a = data[i].id;
@@ -103,9 +104,8 @@ $(document).ready(function() {
                         "</div>"+
                         "<div class='rating'>"+
                             "<div class='btn'>"+
-                            if( isset($_COOKIE[$cookie_name]) ) {
+                            //( isset($_COOKIE[$cookie_name])  ?
                             "<a class='button' id='minus" + data[i].id+"' name='minus' onclick='voting("+data[i].id+",-1)'>" +
-                            }
                             "<i class='material-icons'>remove</i>"+
                             "</a>" +
                             "<div class='spaceBtn'></div>"+
@@ -124,6 +124,12 @@ $(document).ready(function() {
                         "</div>"+
                         "<div class='space'></div>");
                         $("#test"+data[i].id).css("font-size",fontSize);
+
+                        var cookie=getCookie("tcVotingSystem"+data[i].id);
+                        if (cookie!=""  && !cookie != null) {
+                            $("#plus"+data[i].id).css("background-color", "#494949");
+                            $("#minus"+data[i].id).css("background-color", "#494949");
+                        }
                     }
 
                 });
@@ -133,29 +139,53 @@ $(document).ready(function() {
         //upvote-downvote
 
 });
+            function getCookie(cname) {
+                var name = cname + "=";
+                var ca = document.cookie.split(';');
+                for(var i=0; i<ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0)==' ') c = c.substring(1);
+                    if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+                }
+                return "";
+            }
+            function setCookie(cname, cvalue, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                var expires = "expires="+d.toUTCString();
+                document.cookie = cname + "=" + cvalue + "; " + expires;
+            }
 
             function voting(id,value){
+            var cookie=getCookie("tcVotingSystem"+id);
+            if (cookie==""  || cookie == null) {
+                setCookie("tcVotingSystem"+id,"ok",1);          
+                var formData = {id:id, value:value};
+                $.ajax(
+                {
+                    url : "vote.php",
+                    type: "POST",
+                    data : formData,
+                }).done(function(data, textStatus, jqXHR) 
+                {
+                        //data: Data from Server
 
-            var formData = {id:id, value:value};
-            $.ajax(
-            {
-                url : "vote.php",
-                type: "POST",
-                data : formData,
-            }).done(function(data, textStatus, jqXHR) 
-            {
-                //data: Data from Server
+                    var el = $("#score"+id);
+                    var num = parseInt(el.text());
+                    if(value==1){
+                        el.text(num+1);
+                        $("#plus"+id).css("background-color", "#494949");
 
-            }).fail(function(jqXHR, textStatus, errorThrown) 
-            {
-            });
-            var el = $("#score"+id);
-            var num = parseInt(el.text());
-            if(value==1){
-                el.text(num+1);
-            }
-            else{
-                el.text(num-1);
+                    }
+                    else{
+                        el.text(num-1);
+                        $("#minus"+id).css("background-color", "#494949");
+
+                    }
+
+                }).fail(function(jqXHR, textStatus, errorThrown) 
+                {
+                });
             }
             }
 
