@@ -92,6 +92,7 @@ $(document).ready(function() {
                 $.getJSON("getdata.php",function (data) {
 
                     for (var i = 0; i < data.length; i++){
+                        $cookie_name = 'tcVotingSystem'+data[i].id;
                         console.log(data[i].besedilo.length);
                         var fontSize = resizeFont(data[i].besedilo.length);
                         console.log(fontSize);
@@ -102,7 +103,9 @@ $(document).ready(function() {
                         "</div>"+
                         "<div class='rating'>"+
                             "<div class='btn'>"+
+                            if( isset($_COOKIE[$cookie_name]) ) {
                             "<a class='button' id='minus" + data[i].id+"' name='minus' onclick='voting("+data[i].id+",-1)'>" +
+                            }
                             "<i class='material-icons'>remove</i>"+
                             "</a>" +
                             "<div class='spaceBtn'></div>"+
