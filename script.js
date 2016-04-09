@@ -51,32 +51,8 @@ function resizeFont(index) {
 
     return string;
 }
-/*
-function vote(id,value) { // function vote with 2 arguments: article ID and value (+1 or -1) depending if you clicked on the arrow up or down
-    var dataFields = {'id': id, 'value': value}; // We pass the 2 arguments
-    $.ajax({ // Ajax
-        type: "POST",
-        url: "tuto-voting-system.php",
-        data: dataFields,
-        timeout: 3000,
-  
-        success: function(dataBack){
-            //$('#score' + id).html(dataBack); // div "number" with the new number
-            //$('#arrow_up' + id).html('<div class="arrow_up_voted"></div>'); // We replace the clickable "arrow up" by the not clickable one
-            //$('#arrow_down' + id).html('<div class="arrow_down_voted"></div>'); // We replace the clickable "arrow down" by the not clickable one
-            //$('#message' + id).html('<div id="alertFadeOut' + id + '" style="color: green">Thank you for voting</div>'); // Diplay message with a fadeout
-            //$('#alertFadeOut' + id).fadeOut(1000, function () {
-            //    $('#alertFadeOut' + id).text('');
-            //});
-            },
-        error: function() {
-            $('#score' + id).text('Problem!');
-        }
-        
-    });
-}
 
-*/
+
 $(document).ready(function() {
 
         var numItems = $(".post").length;
@@ -104,12 +80,10 @@ $(document).ready(function() {
                         "</div>"+
                         "<div class='rating'>"+
                             "<div class='btn'>"+
-                            //( isset($_COOKIE[$cookie_name])  ?
                             "<a class='button' id='minus" + data[i].id+"' name='minus' onclick='voting("+data[i].id+",-1)'>" +
                             "<i class='material-icons'>remove</i>"+
                             "</a>" +
                             "<div class='spaceBtn'></div>"+
-                            //onclick="vote(<?php echo $article['id']; ?>, '+1'); return false;"
                             "<a class='button' id='plus" + data[i].id+"' onclick='voting("+data[i].id+",1)'>"+
                             "<i class='material-icons'>add</i>"+
                             "</a>"+
@@ -126,9 +100,14 @@ $(document).ready(function() {
                         $("#test"+data[i].id).css("font-size",fontSize);
 
                         var cookie=getCookie("tcVotingSystem"+data[i].id);
-                        if (cookie!=""  && !cookie != null) {
-                            $("#plus"+data[i].id).css("background-color", "#494949");
-                            $("#minus"+data[i].id).css("background-color", "#494949");
+                        if (cookie!=""  && cookie != null) {
+                                console.log(readCookie("tcVotingSystem"+data[i].id));
+                            if (  readCookie("tcVotingSystem"+data[i].id)=="plus"){
+                                $("#plus"+data[i].id).css("background-color", "#494949");
+                            }
+                            else{
+                                $("#minus"+data[i].id).css("background-color", "#494949");
+                            }
                         }
                     }
 
@@ -136,9 +115,9 @@ $(document).ready(function() {
             }
         });
 
-        //upvote-downvote
 
 });
+
             function getCookie(cname) {
                 var name = cname + "=";
                 var ca = document.cookie.split(';');
@@ -156,10 +135,27 @@ $(document).ready(function() {
                 document.cookie = cname + "=" + cvalue + "; " + expires;
             }
 
+            function readCookie(name) {
+                var nameEQ = name + "=";
+                var ca = document.cookie.split(';');
+                for(var i=0;i < ca.length;i++) {
+                    var c = ca[i];
+                    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+                }
+                return null;
+            }
+
             function voting(id,value){
+
             var cookie=getCookie("tcVotingSystem"+id);
             if (cookie==""  || cookie == null) {
-                setCookie("tcVotingSystem"+id,"ok",1);          
+                if(value==1){
+                    setCookie("tcVotingSystem"+id,"plus",1);          
+                }
+                if(value==-1){
+                    setCookie("tcVotingSystem"+id,"minus",1);          
+                }               
                 var formData = {id:id, value:value};
                 $.ajax(
                 {
@@ -168,8 +164,6 @@ $(document).ready(function() {
                     data : formData,
                 }).done(function(data, textStatus, jqXHR) 
                 {
-                        //data: Data from Server
-
                     var el = $("#score"+id);
                     var num = parseInt(el.text());
                     if(value==1){
@@ -182,7 +176,6 @@ $(document).ready(function() {
                         $("#minus"+id).css("background-color", "#494949");
 
                     }
-
                 }).fail(function(jqXHR, textStatus, errorThrown) 
                 {
                 });
