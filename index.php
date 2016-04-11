@@ -32,8 +32,8 @@
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="#">Slabe fore</a></li>
-                    <li><a href="#">Nove fore</a></li>
-                    <li><a href="#">Objavi</a></li>
+                    <li><a href="index.php">Nove fore</a></li>
+                    <li><a href="objavi.php">Objavi</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -42,7 +42,7 @@
     <div class="content">
         <div class="post">
             <div class="text">
-                <p id="test12">Lorem ipsum dolor sit amet, </p>
+                <p id="test12">Lorem ipsum11 dolor sit amet, </p>
             </div>   
             <div class="rating">
                 <div class="btn">

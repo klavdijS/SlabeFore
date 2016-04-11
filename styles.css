@@ -115,7 +115,7 @@ body {
     width: 100%;
     border: solid 1px;
     border-color: #4C9B99;
-	background-color: #fff; 
+	background-color: #fff;
 	background-image: 
 	linear-gradient(#eee .1em, transparent .1em);
 	background-size: 100% 1.2em;
@@ -148,6 +148,12 @@ body {
 .btn{
 	float:right;
    	width: 60%;
+	border : none !important;
+}
+
+.btn:active {
+	border:none;
+	outline:none;
 }
 
 .avtor{
