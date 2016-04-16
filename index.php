@@ -32,7 +32,7 @@
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="#">Slabe fore</a></li>
-                    <li><a href="index.php">Nove fore</a></li>
+                    <li><a href="novefore.php">Nove fore</a></li>
                     <li><a href="objavi.php">Objavi</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -40,28 +40,38 @@
     </div>
 
     <div class="content">
-        <div class="post">
+        <div class="post" id = "glasujBtn1">
             <div class="text">
                 <p id="test12">Lorem ipsum11 dolor sit amet, </p>
             </div>   
             <div class="rating">
-                <div class="btn">
-                    <a class="button" id= "minus">
-                        <i class="material-icons">remove</i>
-                    </a>
-                     <div class="spaceBtn"></div>
-                     <a class="button" id="plus">
-                        <i class="material-icons">add</i>
-                    </a>
+                <div class="glasovanje">
+                    <div class= "glasuj" id = "glasujBtn">Glasuj</div>
                 </div>
                 <div class="score" id= "1fora">
-                    <p  >-120</p>
+                    <p>-129</p>
                 </div>
             </div>
             <div class="avtor">
                 <p >-Klemen, 12.4.2016</p>
 
             </div>
+        </div>
+
+        <div class="post" id = "glasujBtn2" style ="display:none;">
+            <div class="text">
+                <p id="glasT">Lorem ipsum11 dolor sit amet, </p>
+            </div>   
+        <!--
+            <div class="rating">
+                <div class="glasovanje">
+                    <div class= "glasuj" id = "glasujBtn">Glasuj</div>
+                </div>
+                <div class="score" id= "glasS">
+                    <p>-129</p>
+                </div>
+            </div>
+        -->
         </div>
 
         <div class="space"></div>
@@ -71,7 +81,7 @@
                 <p id="test22" >Lorem ipsum dolor sit amet, Lorem ipsum dolor sit </p>
             </div>   
             <div class="rating">
-                <div class="btn">
+                <div class="glasovanje">
                     <a class="button">
                         <i class="material-icons">remove</i>
                     </a>
@@ -97,7 +107,7 @@
                 <p id="test32" >Lorem ipsum dolor sit amet, Lorrem ipsum dolor sem ipsum dolor sit ametrem ipsum dolor s,</p>
             </div>   
             <div class="rating">
-                <div class="btn">
+                <div class="glasovanje">
                     <a class="button">
                         <i class="material-icons">remove</i>
                     </a>
@@ -128,5 +138,7 @@
 <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 <script src="script.js"></script>
 <script src="rate.js"></script>
+<script src="touchmouse.js"></script>
+
 </body>
 </html>

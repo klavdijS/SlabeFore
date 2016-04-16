@@ -52,9 +52,9 @@
             <div class="test">
                 <div class="form-group" id="komentar">
                     <label for="comment">Moja fora:</label>
-                    <textarea class="form-control" rows="5" placeholder="Slaba fora" id="post" maxlength="140" name="comment"></textarea>
+                    <textarea class="form-control" rows="5" placeholder="Slaba fora" id="post" maxlength="250" name="comment"></textarea>
                 </div>
-                <div id="charNum">140 preostalih znakov</div>
+                <div id="charNum">250 preostalih znakov</div>
             </div>
                 <button class="btn btn-lg" id="objavi" onclick="changeButton.call(this)" name="post_submit">Objavi</button>
         </form></center>

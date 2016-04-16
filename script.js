@@ -8,7 +8,7 @@ function resizeFont(index) {
 
     if (stringLength < 30 ) {
         //$("#test"+index).css("font-size", "18pt");
-        string = "18pt";
+        string = "17pt";
 
     }
     else if (stringLength < 50 ) {
@@ -28,6 +28,11 @@ function resizeFont(index) {
         string = "10pt";
     }
 
+    else if (stringLength < 250 ) {
+        //$("#test"+index).css("font-size", "10pt");
+        string = "8pt";
+    }
+
     for (var i= 12;i <= 32;i += 10){
 
         var length = $("#test"+i).text().length;
@@ -36,7 +41,7 @@ function resizeFont(index) {
             $("#test"+i).css("font-size", "18pt");
         }
         else if (length < 50 ) {
-            $("#test"+i).css("font-size", "15pt");
+            $("#test"+i).css("font-size", "16pt");
         }
         else if (length < 80 ) {
             $("#test"+i).css("font-size", "13pt");
@@ -79,7 +84,7 @@ $(document).ready(function() {
                             "<p id='test" + data[i].id+"'>" +data[i].besedilo+"</p>"+
                         "</div>"+
                         "<div class='rating'>"+
-                            "<div class='btn'>"+
+                            "<div class='glasovanje'>"+
                             "<a class='button' id='minus" + data[i].id+"' name='minus' onclick='voting("+data[i].id+",-1)'>" +
                             "<i class='material-icons'>remove</i>"+
                             "</a>" +
@@ -93,7 +98,7 @@ $(document).ready(function() {
                             "</div>"+
                             "</div>"+
                             "<div class='avtor'>"+
-                            "<p> -" + data[i].avtor + ", " + data[i].datum +"</p>"+
+                            "<p>" + data[i].avtor + ", " + data[i].datum +"</p>"+
                         "</div>"+
                         "</div>"+
                         "<div class='space'></div>");
@@ -114,9 +119,16 @@ $(document).ready(function() {
                 });
             }
         });
-
-
 });
+
+$.support.selectstart = "onselectstart" in document.createElement("div");
+$.fn.disableSelection = function() {
+    return this.bind( ( $.support.selectstart ? "selectstart" : "mousedown" ) +
+        ".ui-disableSelection", function( event ) {
+        event.preventDefault();
+    });
+};
+
 
             function getCookie(cname) {
                 var name = cname + "=";
@@ -182,5 +194,125 @@ $(document).ready(function() {
             }
             }
 
+/*
+$( "#glasujBtn" )
+  .vmouseup(function() {
+        $( "#glasujPost" ).css("background-color", "blue");
 
+  })
+    .vmousedown(function(){
+        $( "#glasujPost" ).css("background-color", "red");
 
+    });
+*/
+    var pointerEventToXY = function(e){
+      var out = {x:0, y:0};
+      if(e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel'){
+        var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+        out.x = touch.pageX;
+        out.y = touch.pageY;
+      } else if (e.type == 'mousedown' || e.type == 'mouseup' || e.type == 'mousemove' || e.type == 'mouseover'|| e.type=='mouseout' || e.type=='mouseenter' || e.type=='mouseleave') {
+        out.x = e.pageX;
+        out.y = e.pageY;
+      }
+      return out;
+    };
+
+var current_button;
+var rejt=0;
+$('#glasujBtn').bind( "mousedown touchstart", function(e){
+    $('#glasujBtn1').fadeOut(300, function(){
+            $('#glasujBtn2').fadeIn();});
+    //$('#glasujBtn1').hide();
+    //$('#glasujBtn2').show();  
+    $(document).disableSelection();
+            current_button = this.id;
+            $("#glasT").css("color","white"); 
+});
+//var rt = ($(window).width() - ($whatever.offset().left + $whatever.outerWidth()));
+$(document).on('mouseup touchend', function(e){
+    if(current_button!=null){
+            $('#glasujBtn2').fadeOut(300, function(){
+            $('#glasujBtn1').fadeIn();});
+            $("#1fora").animate({fontSize: "25pt"}, 500);
+            $("#1fora").animate({fontSize: "20pt"}, 500);
+        //$('#glasujBtn2').hide();
+        //$('#glasujBtn1').show(); 
+        //$("#"+current_button+"1").css("background-color", "red");
+          console.log(pointerEventToXY(e).x); 
+          console.log($("#"+current_button+"1").offset().left);
+          console.log(($("#"+current_button+"1").offset().left + $("#"+current_button+"1").outerWidth()));
+        if(rejt<0.25){
+          $("#1fora").text("9/11");
+
+        }  
+        else if(rejt<0.5){
+          $("#1fora").text("3/7");
+ 
+        }
+        else if(rejt<0.75){
+          $("#1fora").text("4/7");
+   
+        } 
+        else if(rejt<1.1){
+          $("#1fora").text("5/7");  
+        }               
+          current_button=null;
+          $("#glasujBtn").css("background-color", "#494949");
+          $("#glasujBtn").prop("disabled",true);
+    }
+});
+var mousePos;
+var colorR;
+var colorG;
+var colorB;
+$(document).on('mousemove touchmove', function(e){
+    if(current_button!=null){   
+        if((pointerEventToXY(e).x-$("#"+current_button+"2").offset().left)<0){
+            mousePos=0;
+        }
+        else if((pointerEventToXY(e).x-$("#"+current_button+"2").offset().left)>( $("#"+current_button+"2").outerWidth())){
+            mousePos=$("#"+current_button+"2").offset().left + $("#"+current_button+"2").outerWidth();
+        }  
+        else{
+            mousePos=pointerEventToXY(e).x;
+        }    
+        //console.log($("#"+current_button+"2").offset().left); 
+        rejt = ((mousePos-$("#"+current_button+"2").offset().left)/( $("#"+current_button+"2").outerWidth()));
+        if (rejt<0) rejt=0;
+        rejt = Math.round(rejt * 100) / 100;
+        if(rejt<0.25){
+          $("#glasT").text("9/11");   
+          $("#glasT").css("font-size","40pt");     
+
+        }  
+        else if(rejt<0.5){
+          $("#glasT").text("Slaba za popizdit!!!");   
+           $("#glasT").css("font-size","27pt");   
+
+        }
+        else if(rejt<0.75){
+          $("#glasT").text("Slaba!"); 
+          $("#glasT").css("font-size","25pt");     
+        } 
+        else if(rejt<1.1){
+          $("#glasT").text("Dobra!:)"); 
+          $("#glasT").css("font-size","20pt");     
+        } 
+        //76, 155, 153  
+ 
+        console.log(rejt);
+        colorR = Math.round(rejt*76);
+        colorG = Math.round(rejt*155);
+        colorB = Math.round(rejt*153);
+        $('#glasujBtn2').css("background-color", "rgb("+colorR+","+colorG+","+colorB+")");              
+    }
+});
+
+/*
+var lastMove = null;
+
+$(document).on('touchmove', function() {
+  lastMove = e.originalEvent.touches[0].pageX;
+});
+*/

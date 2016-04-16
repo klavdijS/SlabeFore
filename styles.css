@@ -116,8 +116,6 @@ body {
     border: solid 1px;
     border-color: #4C9B99;
 	background-color: #fff;
-	background-image: 
-	linear-gradient(#eee .1em, transparent .1em);
 	background-size: 100% 1.2em;
 }
 
@@ -142,20 +140,19 @@ body {
    	margin-top: 50px;
 	font-size: 25px;
 	position: relative;
-	left: -20px;
+	left: -22px;
 }
 
-.btn{
+.glasovanje{
+   	margin-top: 5px;	
 	float:right;
    	width: 60%;
-	border : none !important;
 }
 
-.btn:active {
-	border:none;
-	outline:none;
-}
+.test1{
+		float:right;
 
+}
 .avtor{
 	padding: 0 20px;
     padding-top: 120px;
@@ -190,6 +187,18 @@ body {
     font-size: 36px;
     border-radius: 8px;
 }
+.glasuj {
+    background-color: #4C9B99; 
+    border: none;
+    color: white;
+    padding: 1px 5px ;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    border-radius: 8px;
+    margin-top: 45px;
+}
 
 
 .button:active {
@@ -200,7 +209,7 @@ body {
 	.button{
 		font-size: 29px;
     	padding: 1px 8px ;
-    	margin-top: 5px;
+    	margin-top: 8px;
 	}
 }
 

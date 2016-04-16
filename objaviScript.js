@@ -3,7 +3,7 @@
  */
 $(document).ready(function () {
     $('#post').keyup(function () {
-        var max = 140;
+        var max = 250;
         var len = $(this).val().length;
         if (len >= max) {
             $('#charNum').text('Dosegli ste mejo.');

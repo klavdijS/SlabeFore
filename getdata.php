@@ -3,7 +3,7 @@
 require 'config.php';
 
 
-$query = "SELECT * FROM postslabefore";
+$query = "SELECT * FROM postslabefore ORDER by rating";
 
 $result = mysqli_query($link,$query);
 
