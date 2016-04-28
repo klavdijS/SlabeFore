@@ -42,7 +42,7 @@
     </div>
 
     <div class="content">
-        <center><form action="submit.php" method="post" role="form">
+        <center><form action="submit.php" method="post" role="form" data-ajax="false">
             <div class="test" id="username">
                 <div class="form-group">
                     <label for="user">Ime:</label>
