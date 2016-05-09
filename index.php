@@ -39,30 +39,41 @@
         </nav>
     </div>
 
-    <div class="content">
-        <div class="post" id = "glasujBtn1">
-            <div class="text">
-                <p id="test12">Lorem ipsum11 dolor sit amet, </p>
-            </div>   
-            <div class="rating">
-                <div class="glasovanje">
-                    <div class= "glasuj" id = "glasujBtn">Glasuj</div>
+    <div class="content">        <!--
+        <div class="postT">        
+            <div class="post" id = "glasujBtn1F">
+                <div class="text">
+                    <p id="tekst1">Lorem ipsum11 dolor sit amet, </p>
+                </div>   
+                <div class="rating">
+                    <div class="glasovanje">
+                        <div class= "glasuj"  id = "glasujBtn1">
+                            <i class="material-icons" style= "font-size:30px" id = "test2">pan_tool</i>
+                     </div>
+                                                        
+                    </div>
+                    <div class="score" id= "score1">
+                        <p style = "font-family: 'Arvo', serif; font-weight: bold; font-size: 17pt; font-style: normal;color:#4C9B99;">3.1<i style = "font-style: normal; color:#333333;">/7</i></p>
+                    </div>
                 </div>
-                <div class="score" id= "1fora">
-                    <p>-129</p>
-                </div>
+                <div class="avtor" id= "avtor1">
+                    <p >Klemen, 12.4.2016</p>
+                </div>       
             </div>
-            <div class="avtor">
-                <p >-Klemen, 12.4.2016</p>
-
-            </div>
-        </div>
-
-        <div class="post" id = "glasujBtn2" style ="display:none;">
-            <div class="text">
-                <p id="glasT">Lorem ipsum11 dolor sit amet, </p>
-            </div>   
-        <!--
+            <div class="postOceni" id = "glasujOceM1" style="display:none;" >             
+                <div class="text1" >
+                    <p id="glasT">Lorem ipsum11 dolor sit amet, </p>
+                </div>  
+            </div> 
+                <i class= "glasujOcena" id = "cover1"  style= "top: 49px;right: 49px;width:53px;height:53px;background-color:rgb(76,155,153);display:none;" ></i>
+                <i class= "glasujOcena" id = "5od71"  style= "background-color:rgb(76,155,153);display:none;" >5/7</i>
+                <i class= "glasujOcena" id = "4od71"  style= "background-color:rgb(67,121,119);display:none;" >4/7</i>
+                <i class= "glasujOcena" id = "3od71"  style= "background-color:rgb(59,86,85);display:none;" >3/7</i>
+                <i class= "glasujOcena" id = "2od71"  style= "background-color:rgb(51,51,51);display:none;" >2/7</i>    
+            </div>            
+        </div> 
+        <div class="space"></div>          
+        <!--style ="display:none;"
             <div class="rating">
                 <div class="glasovanje">
                     <div class= "glasuj" id = "glasujBtn">Glasuj</div>
@@ -71,63 +82,9 @@
                     <p>-129</p>
                 </div>
             </div>
+        </div>
         -->
-        </div>
 
-        <div class="space"></div>
-
-        <div class="post">
-            <div class="text">
-                <p id="test22" >Lorem ipsum dolor sit amet, Lorem ipsum dolor sit </p>
-            </div>   
-            <div class="rating">
-                <div class="glasovanje">
-                    <a class="button">
-                        <i class="material-icons">remove</i>
-                    </a>
-                     <div class="spaceBtn"></div>
-                     <a class="button">
-                        <i class="material-icons">add</i>
-                    </a>
-                </div>
-                <div class="score">
-                    <p >-120</p>
-                </div>
-            </div>
-            <div class="avtor">
-                <p >-Klemen, 12.4.2016</p>
-
-            </div>
-        </div>
-
-        <div class="space"></div>
-
-        <div class="post">
-            <div class="text">
-                <p id="test32" >Lorem ipsum dolor sit amet, Lorrem ipsum dolor sem ipsum dolor sit ametrem ipsum dolor s,</p>
-            </div>   
-            <div class="rating">
-                <div class="glasovanje">
-                    <a class="button">
-                        <i class="material-icons">remove</i>
-                    </a>
-                     <div class="spaceBtn"></div>
-                     <a class="button">
-                        <i class="material-icons">add</i>
-                    </a>
-                </div>
-                <div class="score">
-                    <p >-120</p>
-                </div>
-            </div>
-            <div class="avtor">
-                <p >-Klemen, 12.4.2016</p>
-
-            </div>
-        </div>
-        <div class="space"></div>
-        </div>
-    </div>
 
 </div><!-- /.container -->
 

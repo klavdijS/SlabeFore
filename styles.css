@@ -16,7 +16,9 @@ body {
 .navbar {
     margin-bottom: 0;
 }
-
+#title {
+    color:#4C9B99; 
+}
 @media screen and (max-width: 1400px) {
 	.container {
 		width: 50%;
@@ -52,7 +54,6 @@ body {
 		padding-right:0px;
 	    font-size: 19pt;
 	}
-
 }
 
 @media screen and (max-width: 1000px) {
@@ -109,44 +110,62 @@ body {
 .page-header {
     text-align: center;
 }
-
+.postT {
+    position: relative;
+    height: 150px;
+    width: 100%;
+}
 .post {
+    position: absolute;
     height: 150px;
     width: 100%;
     border: solid 1px;
-    border-color: #4C9B99;
+    border-color: #333333;
 	background-color: #fff;
 	background-size: 100% 1.2em;
+    border-radius: 15px;
+    z-index: 1;
+    -webkit-user-select: none;
+}
+.postOceni {
+    position: absolute;
+    height: 150px;
+    width: 100%;
+    z-index: 2;
+    -webkit-user-select: none;
+
+}
+.ocena {
+    height: 150px;
+    width: 100%;
+    background-size: 100% 1.2em;   
 }
 
 .text{
 	padding: 15px;
-	width: 65%;
+	width: 75%;
 	float: left;
-	font-family: 'Arvo', serif;
-	font-style: italic;
-}
+    font-family: 'Arvo', serif;
 
+}
+.text1{
+    padding: 15px;
+    width: 75%;
+    float: left;
+    font-family: 'Arvo', serif;
+    font-weight: bold;
+    color:white;
+    position: relative;
+}
 .rating{
 	float:right;
-   	width: 25%;
+   	width: 15%;
    	margin:8px;
 }
 
-.score{
-	float:left;
-   	width: 30%;
-   	text-align: center;
-   	margin-top: 50px;
-	font-size: 25px;
-	position: relative;
-	left: -22px;
-}
 
 .glasovanje{
-   	margin-top: 5px;	
-	float:right;
-   	width: 60%;
+    width: 100%;
 }
 
 .test1{
@@ -158,9 +177,6 @@ body {
     padding-top: 120px;
     padding-bottom: 8px;
     font-family: 'Arvo', serif;
-	font-style: italic;
-
-
 }
 
 
@@ -188,18 +204,102 @@ body {
     border-radius: 8px;
 }
 .glasuj {
-    background-color: #4C9B99; 
-    border: none;
-    color: white;
-    padding: 1px 5px ;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 25px;
-    border-radius: 8px;
-    margin-top: 45px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    display:block;
+    width:50px;
+    height:50px;
+    line-height:50px;
+    border: 1px solid #333333;
+    border-radius: 50%;
+    color:#4C9B99; 
+    text-align:center;
+    text-decoration:none;
+    box-shadow: 0 0 3px gray;
+    font-family: 'Arvo', serif;
+    font-weight: bold;
+    z-index: 4;
+    background-color: white;
+    cursor:default;
 }
 
+.score{
+    border: none;
+	position: absolute;
+    color: #333333;
+    top: 110px;
+    right: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 0px;   
+}
+
+.glasuj2 {
+    border: solid 2px;
+    border-color: #333333;
+    border-radius: 50%;
+    color: #333333;
+	position: relative;
+    top: -9px;
+    right: -9px;
+    padding: -10px -5px ;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+	-webkit-user-select: none;
+}
+.glasuj1 {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    display:block;
+    width:50px;
+    height:50px;
+    line-height:50px;
+    border: 1px solid #333333;
+    border-radius: 50%;
+    color:#4C9B99; 
+    text-align:center;
+    text-decoration:none;
+    box-shadow: 0 0 3px gray;
+    font-family: 'Arvo', serif;
+    font-weight: bold;
+    z-index: 4;
+    background-color: white;
+    cursor:default;
+
+}
+.glasujOcena {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    display:block;
+    width:50px;
+    height:50px;
+    line-height:50px;
+    border: 1px solid #333333;
+    border-radius: 50%;
+    color:white; 
+    text-align:center;
+    text-decoration:none;
+    box-shadow: 0 0 3px gray;
+    font-family: 'Arvo', serif;
+    font-weight: bold;
+    z-index: 3;
+    background-color: red;
+    cursor:default;
+}
+
+#test2{
+      position: relative;
+    top: 8px;
+    right: 3px;  
+}
+.glasuj1:hover {
+    background: #262626;
+}
 
 .button:active {
     border: 2px solid green;
@@ -212,6 +312,7 @@ body {
     	margin-top: 8px;
 	}
 }
+
 
 .navbar .navbar-nav {
      display: inline-block;
